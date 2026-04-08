@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ActivityFlow — Task Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <div class="app-shell">
+    <header class="header">
+      <div class="header-left">
+        <span class="logo-dot"></span>
+        <span class="logo-text">ActivityFlow</span>
+      </div>
+      <div class="header-right">
+        <span class="badge" id="badge-live">● LIVE</span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <p class="hero-eyebrow">Hackathon Level-2 &nbsp;/&nbsp; Interactivity</p>
+      <h1 class="hero-title">TRACK YOUR<br/><em>PROGRESS</em></h1>
+      <p class="hero-sub">Mark tasks complete. Watch the numbers move. No refresh needed.</p>
+    </section>
+
+    <div class="progress-panel">
+      <div class="progress-stat">
+        <span class="stat-num" id="stat-completed">0</span>
+        <span class="stat-label">Completed</span>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+          <div class="progress-bar-glow" id="progress-glow"></div>
+        </div>
+        <span class="progress-percent" id="progress-percent">0%</span>
+      </div>
+      <div class="progress-stat right">
+        <span class="stat-num" id="stat-total">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+    </div>
+
+    <div class="status-message" id="status-message">
+      <span class="mono" id="status-text">Loading activities...</span>
+    </div>
+
+    <main class="activities-grid" id="activities-grid"></main>
+
+    <div class="all-done-banner" id="all-done-banner">
+      <div class="all-done-inner">
+        <div class="checkmark-big">✓</div>
+        <h2>All Done!</h2>
+        <p>Every activity has been completed. Excellent work.</p>
+        <button class="btn-reset" id="btn-reset">Reset All Activities</button>
+      </div>
+    </div>
+
+    <!-- SUBMIT SECTION -->
+    <div class="submit-section">
+      <div class="submit-hint" id="submit-hint">
+        <span class="hint-icon">⚡</span>
+        <span id="submit-hint-text">Complete all activities to unlock submission.</span>
+      </div>
+      <button class="btn-submit" id="btn-submit">
+        <span class="btn-submit-inner">
+          <span class="btn-submit-icon">▶</span>
+          <span class="btn-submit-label">Submit Progress</span>
+        </span>
+        <span class="btn-submit-shine"></span>
+      </button>
+    </div>
+
+    <footer class="footer">
+      <span class="mono">ActivityFlow v2.0</span>
+      <span>Front-End Hackathon · Level 2</span>
+    </footer>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      <div class="modal-icon-wrap" id="modal-icon-wrap">
+        <div class="modal-icon" id="modal-icon"></div>
+        <div class="modal-icon-ring" id="modal-icon-ring"></div>
+      </div>
+      <div class="modal-content">
+        <p class="modal-eyebrow" id="modal-eyebrow"></p>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <p class="modal-body" id="modal-body"></p>
+        <div class="modal-breakdown" id="modal-breakdown">
+          <div class="breakdown-bar-track">
+            <div class="breakdown-bar-fill" id="breakdown-bar-fill"></div>
+          </div>
+          <p class="breakdown-label" id="breakdown-label"></p>
+          <ul class="pending-list" id="pending-list"></ul>
+        </div>
+      </div>
+      <div class="modal-actions" id="modal-actions"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
